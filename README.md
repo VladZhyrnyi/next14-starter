@@ -1,1 +1,1 @@
-Educational project, laerning Next.js 
+Educational project, learning Next.js 
