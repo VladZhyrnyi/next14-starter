@@ -1,12 +1,24 @@
 import { getUser } from "@/lib/data";
+import styles from "./postUser.module.css";
 import Image from "next/image";
 
-import styles from "./postUser.module.css";
+// FETCH DATA WITH AN API
+// const getData = async (userId) => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}` ,{cache:"no-store"});
+
+//   if (!res.ok) {
+//     throw new Error("Something went wrong");
+//   }
+
+//   return res.json();
+// };
 
 const PostUser = async ({ userId }) => {
-  const user = await getUser(userId);
+  // FETCH DATA WITH AN API
+  // const user = await getData(userId);
 
-  console.log(user);
+  // FETCH DATA WITHOUT AN API
+  const user = await getUser(userId);
 
   return (
     <div className={styles.container}>
@@ -14,8 +26,8 @@ const PostUser = async ({ userId }) => {
         className={styles.avatar}
         src={user.img ? user.img : "/noavatar.png"}
         alt=""
-        width={40}
-        height={40}
+        width={50}
+        height={50}
       />
       <div className={styles.texts}>
         <span className={styles.title}>Author</span>
